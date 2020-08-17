@@ -1,6 +1,9 @@
 Aula-19-103-1-Exercícios
 
-Os exercícios a seguir tem a finalidade principal de revisar e praticar o que estudamos durante as aulas, no entanto, você também pode ser desafiado a descobrir novas opções ou formas de uso dos comandos, inclusive combinando comandos estudados em diferentes sub-tópicos.
+Os exercícios a seguir tem a finalidade principal de revisar e praticar 
+o que estudamos durante as aulas, no entanto, você também pode ser desafiado a descobrir 
+novas opções ou formas de uso dos comandos, inclusive combinando comandos 
+estudados em diferentes sub-tópicos.
 
 Você encontrará em anexo um documento único com as respostas de todos os exercícios desta seção.
 
