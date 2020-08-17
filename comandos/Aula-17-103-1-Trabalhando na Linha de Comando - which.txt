@@ -1,0 +1,11 @@
+-- Aula-17-103-1-Trabalhando na Linha de Comando - which
+
+-- Procura algum arquivo em que se encontra dentro dos diretorios do PATH
+-- localiza um comando
+which
+
+which echo
+
+
+
+

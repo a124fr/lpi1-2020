@@ -1,0 +1,25 @@
+-- Aula-18-103-1-Trabalhando na Linha de Comando - Quoting
+
+-- Barra de proteção (Quoting)
+
+-- * -> todos os arquivos e diretórios locais de onde estou.
+echo *
+
+-- As aspas simples ou duplas impede a interpretação do caractere especial *
+echo "*"
+
+-- usando a barra scape
+-- Proteje o caractere seguinte
+echo \*
+
+TESTE=Curso
+-- As aspas duplas impede a interpretação de todos so caracteres exceto o $, ` e \
+echo "$TESTE"
+
+-- As aspas simples impede a interpretaçã de tudo
+echo '$TESTE'
+
+
+
+
+

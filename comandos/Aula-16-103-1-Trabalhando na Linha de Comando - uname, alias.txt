@@ -1,0 +1,12 @@
+-- Aula-16-103-1-Trabalhando na Linha de Comando - uname, alias
+
+-- Imprime informações do sistema
+uname
+
+-- Mostra informações de opção do comando uname
+uname --help
+
+-- Criar um atalho ou apelido para algum comando
+alias
+
+alias lt='ls /tmp'

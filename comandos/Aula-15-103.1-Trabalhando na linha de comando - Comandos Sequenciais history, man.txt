@@ -1,0 +1,64 @@
+-- Aula-15-103.1-Trabalhando na linha de comando - Comandos Sequencias, history, man
+
+-- Executar os comandos em sequencia
+-- É executado para cada um em sequencia
+clear ; date ; ls
+
+-- Executa o segundo comando caso o primeiro tenha executado com sucesso
+ls /tmp/teste && echo Linux
+
+-- Só executa o segundo comando caso o primeiro não funcione
+ls /tmp/teste || echo Linux
+
+-- Histório dos comandos utilizados
+-- Fica armazenado no arquivo de historico de comnados executados
+-- Comoando que mostra as lista de comandos executados
+history
+
+-- Executa o último comando executado anteriormente
+!! 
+
+-- Executa comandos anteriores digitando:
+!numero_do_processo
+!28
+
+-- Executa o último comando que encontra a string
+!strings
+!uname
+
+-- Limpa o arquivo de historico
+history -c
+
+-- Para pesquisa um comando digitado
+ctrl + r
+
+-- Recurso para obter ajuda
+man nome_do_comando
+man ls
+
+-- obs: comandos interno não possui o man(manual de ajuda do comando)
+-- O man dos comandos interno é o man do bash
+-- O principal comando para se utilizando como manual
+man bash
+
+-- Traz uma referencia de todos os comandos que possui o item a pesquisar
+man -k "system information"
+man -k "update system"
+
+-- O info é uma arquivo de informação sobre o comando 
+-- É um comando de referencia segundario
+-- Em comparação ao man o info é reduzido
+info nome_do_comando
+info ls
+
+-- Mostra a informação do que é o comando.
+-- Mostra a descrição do comando
+whatis nome_do_comando
+whatis ls
+
+-- Faz a busca baseado na descrição
+-- É o mesmo que o comando man -k "update system"
+apropos "update system"
+
+
+

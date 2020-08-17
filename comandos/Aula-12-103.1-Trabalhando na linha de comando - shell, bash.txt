@@ -1,0 +1,68 @@
+-- Trabalhando na linha de comando - shell, bash, echo, type, PATH
+Interface de comando Shell
+
+-- O que é o shell?
+Uma interface entre o usuário e o linux
+É a interface em que o usuário usa para ter acesso aos recursos que o linux está administrando.
+O shell é a interface onde digitamos os comandos e ele dá os retornos.
+
+
+-- tipos de Shell
+sh
+bash (Padrão) cobrado pela exame da lpi
+csh
+ksh
+zsh
+
+-- O comando echo joga para saída padrão o que digitar após o echo
+echo "Linux Debain" -> interpreta variáveis.
+echo 'Linux Ubuntu'
+echo Linux
+
+-- Como saber qual o shell que estou usando?
+-- Variável do ambiente shell -> $SHELL mostra na tela o shell usado
+echo $SHELL
+
+
+-- Classificação de comandos - 3 tipos de comandos
+-- Os comandos interno do shell
+Comandos que fazem parte do shell
+
+-- Os comandos externo do shell
+comandos externo podem ser programas que podem ser executados atráves do shell
+
+-- O comando type mostra se tipo de comando é interno ou externo.
+type nome_do_comando
+type echo
+type cd
+type clear
+-- obs: clear is hashed (/usr/bin/clear) -> O comando está em uma cache interno.
+
+-- Variável interna no shell chamada PATH 
+que guarda os caminhos dos programas externos
+echo $PATH
+
+-- Scripts
+-- sequencias logicas de comandos executados no shell
+-- Como executar
+-- acessa o diretório onde está o script e digite:
+./nome_do_script
+
+-- obs: uma forma de executar uma arquivo ou programas que não está
+no shell ou nos caminhos da variável path.
+-- obs: É necessário informar o caminho do arquivo
+./nome_script ou /diretorio/diretorio/nome_script -> (o caminho completo ou caminho absoluto).
+
+
+-- comando ls
+-- Lista os conteúdos do diretório
+ls
+
+--
+
+-- O comando clear limpa a tela
+clear
+
+-- Mostra o diretório atual
+pwd
+

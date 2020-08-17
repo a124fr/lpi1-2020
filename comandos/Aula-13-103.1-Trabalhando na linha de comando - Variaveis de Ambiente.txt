@@ -1,0 +1,122 @@
+-- Aula 13-103.1-Trabalhando na linha de comando - Variaveis de Ambiente
+
+-- Assim que o shell é carregado, uma serie de variáveis de ambiente é carregado automanticamente.
+
+-- Essas variáveis são usados pelos processos do shell, comandos e até pelas interface gráficas e etc...
+
+-- Como declara uma variável de ambiente
+-- só é visível localmente na sessão do shell
+NOME_VARIAVEL=valor
+TESTE=Linux
+
+-- obs: processo iniciado partir do shell não enxergam variáveis locais
+Nem shells subsequentes ao atual
+
+-- exportar variável para processos enxergam
+export TESTE
+
+-- Abrir um outra sessão de bash no bash atual, digite:
+bash
+
+-- Essa nova sessão não exerga o variável local criada.
+NOME_VARIAVEL
+
+-- Para enxerga é necessário exporta-la, deixa a variável global
+export NOME_VARIAVEL
+
+-- Para sair digite:
+exit
+
+-- Outra forma de criar variavel exportada
+export LINUX=Xubuntu
+
+-- Comando que mostra todas as variáveis exportadas ou não(local).
+set
+
+-- Comando |less para página saída
+set |less
+
+-- Comando que só mostra variáveis exportadas
+-- É um programa externo ao bash
+env
+
+-- Comando |less para página saída
+env |less
+
+-- Apenas nesse momento(nessa execução) alterar o valor da variável TESTE, pós a execução a variável volta o valor anterior.
+-- Variável não alterada no ambiente
+env TESTE=Windows ./Script_Variavel.sh
+
+-- Remover uma váriavel
+unset TESTE
+
+
+-- Algumas variáveis do ambiente, necessário conhecer
+-- Variável declara automaticamente
+-- Mostra o home do meu usuário local
+echo $HOME
+
+-- Variável HISTFILE define onde está o arquivo de historico de comandos
+echo $HISTFILE
+
+-- Informa o tamanho máximo do arquivo de historico de comandos
+echo $HISTFILESIZE
+
+-- O tamanho máximo de linhas do arquivo
+echo $HISTSIZE
+
+-- O nome do usuário que fez o login na seção do bash
+echo $LOGNAME
+
+-- Diretórios em que o Linux irá procurar por arquivos executáveis
+echo $PATH
+
+-- Mostra o diretório atual em que se encontra
+echo $PWD
+
+-- Mostra o shel utilizado
+echo $SHELL
+
+-- Mostra o terminal em que entrou.
+-- o valor xterm, terminal da interface gráfica.
+-- o valor tty, não passa pela interface gráfica. Loga direto pela terminal de comando
+echo $TERM
+
+-- Semelhante a variável LOGNAME
+echo $USER
+
+-- Variáveis definidas dinamicamente pelo shell
+-- Mostra o PID do processo atual
+echo $$
+
+-- Mostra o último processo executado em background
+echo $!
+
+
+-- Mostra o codigo de retorno do último processo que executou
+-- Tipo de retorno
+-- 0 -> Sucesso
+-- 1 ou 2 -> É erro
+-- obs: Os tipos retorno sitado acima é variável pelo tipo comando ou programas executado
+echo $?
+
+-- Tem o HOME do usuário atual
+-- Retorna /home/nome_do_usuario
+~
+
+-- Retorna /home/nome_do_usuario
+~nome_do_usuario
+~francisco
+~root
+
+
+
+
+
+
+
+
+
+
+
+

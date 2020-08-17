@@ -1,0 +1,53 @@
+Aula-19-103-1-Exercícios
+
+Os exercícios a seguir tem a finalidade principal de revisar e praticar o que estudamos durante as aulas, no entanto, você também pode ser desafiado a descobrir novas opções ou formas de uso dos comandos, inclusive combinando comandos estudados em diferentes sub-tópicos.
+
+Você encontrará em anexo um documento único com as respostas de todos os exercícios desta seção.
+
+
+103.1 Trabalhando na Linha de Comando
+
+1. Encontre as seguintes informações sobre a sua instalação Linux:
+
+    O caminho completo do arquivo .bash_history para o seu usuário;
+    echo $HISTFILE
+    
+    -- resposta alternativa: 
+    set |grep HISTFILE
+
+    O release do kernel instalado
+    uname -r
+
+    Os diretórios incluídos em seu PATH
+    echo $PATH
+
+    O hostname da máquina
+    echo $HOSTNAME
+
+    -- resposta alternativa:      
+    uname –n
+
+    O PID da sua sessão shell atual
+    echo $$
+
+    -- resposta alternativa:  
+    ps |grep bash
+
+    A localização do comando tar
+    which tar
+
+    -- resposta alternativa:  
+    type tar
+
+2. Crie e exporte uma variável chamada "NOME" que contenha o seu nome completo.
+export NOME='Francisco de Assis de Oliveira Silva'
+
+
+3. Crie um comando que escreva na tela a seguinte frase: "O Conteúdo da Variável $NOME é: <Valor da Variável NOME>"
+echo "O Conteúdo da Variável \$NOME é: $NOME"
+
+-- resposta alternativa:
+echo O Conteúdo da Variável \$NOME é: $NOME
+
+-- resposta alternativa:
+echo O Conteúdo da Variável '$NOME' é: $NOME

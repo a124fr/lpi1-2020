@@ -1,0 +1,24 @@
+-- Aula-14-103.1-Trabalhando na linha de comando - Variaveis de Ambiente
+
+Principais Variáveis de Ambiente
+
+É importante conhecer a função de algumas variáveis de ambiente existentes no sistema, as principais são:
+
+DISPLAY: Indica às aplicações gráficas onde as janelas deverão ser exibidas. Será estudado no Tópico 106.
+
+HISTFILE: Arquivo do histórico de comandos
+
+HISTFILESIZE: Quantidade de linhas/comandos armazenados no 
+arquivo de histórico
+
+HOME: Indica o diretório do usuário atual
+
+LOGNAME e USER: Nome do usuário atual
+
+PATH: Diretórios em que o Linux irá procurar por arquivos executáveis
+
+PS1: Aparência do prompt do shell.
+
+PWD: Diretório atual
+
+OLDPWD: Diretório anterior

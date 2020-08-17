@@ -1,0 +1,130 @@
+-- Aula-20-103-2-Aplicando Filtros a Textos e Arquivos - cat, head, tail, sort, less, wc e outros
+
+-- Comando cat ler o conteúdo de uma arquivo texto e joga na tela(sáida padrão)
+cat alunos.txt
+
+-- Mostra todas as linha númeradas
+cat -n alunos.txt
+
+-- Mostra todas as linhas não brancas númeradas
+cat -b alunos.txt
+
+-- Quando tem mais de 1 linha em branco transforma essas linhas em uma linhga em branco
+cat -s alunos.txt
+
+-- Mostra caracteres especiais
+cat -A alunos.txt
+
+-- Outras opções do comando cat
+cat --help
+man cat
+
+-- Imprime o conteúdo do arquivo da última linha para a primeira
+tac alunos.txt
+
+-- Comando head
+-- Mostra as primeiras  10 linhas do arquivo
+head alunos.txt
+
+-- Mostra as duas primeiras linhas
+head -n2 alunost.txt
+
+-- Mostra os primeiros 50 bytes
+head -c50 arquivoslongos.txt
+
+
+-- O comando tail mostra as últimas linha do conteúdo do arquivo
+tail
+
+tail -n5 arquivolongos.txt
+tail -5 arquivolongots.txt
+
+
+-- Ler as últimas linha do arquivo e fica em espera, monitorando o arquvio
+-- Mostra se alguma coisa foi escrito no arquivo
+tail -f alunos.txt
+
+echo 'Nathalia' >> alunos.txt
+
+-- Sair do modo de monitoramento do arquvio
+ctrl + c
+
+-- Pode usar com mais de uma opção
+tail -n5 -f alunos.txt
+
+-- O comando para pagina a saida - less
+less
+
+obs: evolução do comando more
+
+less arquivolongo.txt
+
+-- teclas de navegação 
+/nome_do_que_quer_pesquisar
+/related
+
+-- Vai para proxima ocorrência
+n 
+
+-- Volta na ocorrência anterior
+shift + N
+
+-- Avança uma página
+tab 
+
+-- sair
+q
+
+-- Mostra o status do arquivo, e onde se encontra no arquivo
+ctrl + g
+
+-- Comando less muito usado com o pipe
+-- Pega o resultado do primeiro comando é a entrada para o segundo comando
+cat arquivoslongo.txt |less
+
+-- O Comando wc informa a quantidade de linhas, palavras e bytes de uma arquivo
+wc alunos.txt
+
+-- Mostra quantidades de linhas
+wc -l alunos.txt
+
+-- Mostra quantidades de palavras
+wc -w alunos.txt
+
+-- Mostra quantidades de bytes
+wc -c alunos.txt
+
+-- Mostra a quantidade de caracteres
+wc -m alunos.txt
+
+-- Mostra as informações dos arquivos no diretorios
+wc *
+
+-- ler o conteudo do arquivo e trata com o comando wc -l
+cat alunos.txt |wc -l
+
+--
+tail -n10 alunos.txt |wc
+
+-- Comando nl
+-- Comando igual ao cat -b
+-- Numera as linhas de uma arquivo sem considera as linhas em branco
+nl alunos.txt
+
+-- O comando sort
+-- De A ao Z
+-- Orderna o conteúdo do arquivo
+sort alunos.txt
+
+-- Orderna de forma reversa
+-- De Z ao A
+sort -r alunos.txt
+
+-- Orderna de acordo com o segundo campo
+-- primeiro as linhas vazias
+-- Quando não há o segundo campo
+sort -k2 alunos.txt
+
+--
+cat alunos.txt |sort -r
+

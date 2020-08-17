@@ -1,0 +1,12 @@
+-- Aula-23-103-2-Aplicando Filtros a Textos e Arquivos - Complementando o tr
+
+-- tr
+-- Remover as repetições de um caractere
+echo "Curso de Liiiiiiiinux" | tr -s i
+
+-- Remover as repetições do caractere de espaço em branco
+echo "Curso                 de    Linux" | tr -s " "
+
+-- Usa o comando tr para remover  o \r padrão do windows de nova linha
+tr -d "\r" < ArquivoGeradoWindows.txt > NovoArquivo
+

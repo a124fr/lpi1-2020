@@ -1,0 +1,50 @@
+-- Aula-21-103-2-Aplicando Filtros a Textos e Arquivos - uniq, od, paste, split
+
+-- Comando uniq -> mostra apenas um ocorrência
+-- tem que está ordernado para axiliar na busca das ocorrências unicas
+uniq alunos.txt
+
+sort alunos2.txt |uniq
+
+-- Mostra as ocorrência repetidas
+sort alunos2.txt |uniq -d
+
+-- Faz as contagem das ocorrências
+sort alunos2.txt |uniq -c
+
+
+-- octal dump
+-- Exibe o conteúdo do texto em formato octal
+od alunos.txt
+
+-- Exibe o conteúdo do texto em formato hexdecimal
+od -tx alunos.txt
+
+-- Mostra as opções que pode transformar
+od --help
+
+-- O comando join combina dois arquivos através de um índice
+-- As linhas devem está em sequência
+join codigo-aluno.txt notas-aluno.txt
+
+-- Para definir o índice
+join j2 codigo-aluno.txt notas-aluno.txt
+
+-- O Comando paste semelhante ao comando join, combina linha a linha
+paste codigo-aluno.txt notas-aluno.txt
+
+
+-- O comando split divide um arquivo em vários
+-- -l ->quantidade de linhas a considerar
+split -l20 arquivolongo.txt
+
+-- Definir o nome do arquivo
+split -l20 arquivolongo.txt novo_arquivo_
+
+split -30 arquivolongo.txt novo_teste_
+
+-- Pode dividir em bytes
+split -b100 arquivolongo.txt novo_arquivo2_
+
+
+

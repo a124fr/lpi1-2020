@@ -1,0 +1,87 @@
+-- Aula-22-103-2-Aplicando Filtros a Textos e Arquivos - tr, cut. sed
+
+-- Comando tr
+-- Serve para pegar o conteúdo de texto e substituir ou deletar algum caracter 
+-- Serve para apagar ou substituir uma string de texto
+
+-- Transforma toda letra minuscula em maiuscula de a-z em A-Z
+cat alunos.txt |tr a-z A-Z
+
+-- Transform toda letra A em E
+cat alunos.txt |tr A E
+
+-- Transform toda letra ei em EI
+-- Não precisa está junto ei pode ser e ou i
+cat alunos.txt |tr ei EI
+
+cat alunos.txt |tr [:upper:] [:lower:]
+
+cat alunos.txt |tr ' ' '_'
+
+-- O comando tr pode ser usado para excluir alguma coisa
+cat alunos.txt |tr -d A
+
+-- O comando cut
+-- Serve para recortar parte de um texto
+-- Pode delimitar por caracteres, campos, textos ou a parte que interessa.
+-- recortar os primeiros 5 caracteres
+cut -c1-5 alunos.txt
+
+-- recortar os primeiros 5 caracteres
+cut -c-5 alunos.txt
+
+
+
+-- recortar os caracteres 5 ao 10
+cut -c5-10 alunos.txt
+
+-- recorta os caracteres 5 para frente
+cut -c5- alunos.txt
+
+-- recortar só os caracteres que quero 1,2,5
+cut -c1,2,5 alunos.txt
+
+-- por campos opção -f
+-- delimita por espaço : -d" "
+cut -d" " -f1 alunos.txt
+
+
+-- O comando sed
+-- Usado para procurar e substituir conteúdo de um texto ou deletar partes do texto ou linhas 
+-- Muito usado com expressões regulares
+
+-- Substituir a primeira ocorrência na linha
+sed 's/Silva/Sousa/' alunos.txt
+
+sed 's/Ana/Maria/' alunos.txt
+
+-- Substituir todas as ocorrências
+sed 's/Ana/Maria/g' alunos.txt
+
+-- Deletar da linha 3 até a 5
+sed '3,5 d' alunos.txt
+
+-- Deleta uma palavra ou expressão
+sed '/Claudia/d' alunos.txt
+
+-- Exemplo
+sort alunos.txt |sed '1,3 d' |cat -n
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
