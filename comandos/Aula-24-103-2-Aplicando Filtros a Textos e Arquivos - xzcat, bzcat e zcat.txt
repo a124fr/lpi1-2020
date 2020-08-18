@@ -1,2 +1,16 @@
 -- Aula-24-103-2-Aplicando Filtros a Textos e Arquivos - xzcat, bzcat e zcat
 
+-- Ler conteúdo arquivos texto compactados
+xz
+xzcat arquivolongo.txt.xz
+
+--
+bzip2
+bzcat arquivolongo.txt.bz
+
+--
+gzip
+zcat arquivolongo.txt.gz
+
+
+

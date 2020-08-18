@@ -1,0 +1,23 @@
+-- Aula-25-103-2-Aplicando Filtros a Textos e Arquivos - checksums
+
+-- Comando que gerar e checar hashs(checksum) de arquivos
+-- Gera um representação de caracter de uma arquivo(hash)
+md5sum -> antigo
+sha256sum
+sha512sum
+sha1sum -> antigo
+
+--
+md5sum nome_do_arquivo_gerar_hash
+
+md5sum xubuntu-20.04.1-desktop-amd64.iso
+3e940fc6ce657dc9b35f8d3522bd5d81  xubuntu-20.04.1-desktop-amd64.iso
+
+--
+sha256sum -c nome_do_arquivo_para_comprar
+
+
+
+
+
+

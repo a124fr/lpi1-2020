@@ -1,0 +1,36 @@
+-- Aula-26-103-2-Exercícios
+
+103.2 - Exercícios
+Os exercícios a seguir tem a finalidade principal de revisar e praticar o que estudamos durante as aulas, no entanto, você também pode  ser  desafiado a descobrir novas opções ou formas de uso dos  comandos, inclusive combinando comandos estudados em diferentes  sub-tópicos.
+Você encontrará em anexo um documento único com as respostas de todos os exercícios desta seção. 
+Note que as questões seguem uma sequência numérica até o final deste tópico.
+
+
+
+
+103.2 Aplicando Filtros a Textos e Arquivos
+
+4. O arquivo /etc/passwd contém a lista de usuários do Linux, os campos são separados pelo caractere :, o primeiro campo indica o nome do  usuário e o terceiro o ID do usuário.
+
+Escreva um comando que mostre os últimos 15 registros do arquivo, exibindo apenas o nome do usuário e seu ID, e que esteja ordenado pelo  ID numérico. Por exemplo:
+
+usuario1:10
+
+usuario2:12
+
+usuario:3:1000
+
+-- Minha resposta
+tail -15 /etc/passwd |cut -d":" -f1,3 |tr ':' ' ' |sort -k2  
+
+-- Resposta o prof.
+tail -n 15 /etc/passwd | cut -d":" -f1,3|sort -t ":" -k2 -g
+
+-- obs:
+* No comando sort, o –t define o delimitador, o –k o campo referência para o
+ordenamento, e o –g ordena como números ao invés de como caracteres
+
+5. Gere um comando, ou sequência deles, que mostre o número de linhas do arquivo /etc/passwd excluindo-se as linhas que contenham a palavra  "daemon". O resultado do comando deve ser o número de linhas.
+
+cat passwd2 |sed '/daemon/d' |wc -l
+
