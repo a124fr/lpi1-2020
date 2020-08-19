@@ -2,8 +2,8 @@
 
 -- Comando tar para grupa e junto com o algoritmo de compactação como e gzip, bzip2 e xz para compactar ou descompactar arquivos
 tar
-c -> criar uma arquivo
-x -> criar extrair de um arquivo compactado
+c -> criar uma arquivo, grupa
+x -> extrair os arquivos
 t -> lista os arquivos de um arquivo compactado
 f -> para informar o nome do arquivo, deve está sempre presente
 p -> preserva as permissões dos arquivos
