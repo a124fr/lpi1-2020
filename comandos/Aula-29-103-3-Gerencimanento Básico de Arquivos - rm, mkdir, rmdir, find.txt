@@ -1,0 +1,59 @@
+-- Aula-29-103-3-Gerencimanento Básico de Arquivos - rm, mkdir, rmdir, find
+
+-- Comando para remover arquivo e diretórios
+rm
+
+--
+rm Aula2
+
+-- -i de interativo -> pergunta se quer remover.
+rm -i Aula2*
+
+-- -v de verbose -> mostra o detalhe da removção
+rm -v Aula2*
+
+-- -r de recursivo - remover o diretorio e tudo que estiver dentro
+rm -r Exercicios/
+
+-- Remover diretorios vazio
+rmdir nome_do_diretorio
+
+rmdir teste/
+
+-- remove desde que os diretorios estejam vazios
+rmdir -p Linux/Ubuntu
+
+-- Comando para criar diretorios
+mkdir nome_do_diretorio
+
+mkdir Linux
+
+mkdir Linux/Ubuntu
+
+
+-- -p cria toda a estrutura
+mkdir -p Curso/LPI/Versao1
+
+mkdir -parents Curso/LPI/Versao1
+
+
+-- Comando find
+-- Procurar arquivos e diretorios no sistema
+find caminho_onde_procurar -name nome_do_arquivo
+find /home -name Aula10
+
+find /home -name Aula2*
+
+--
+find /home -user lpi2 -name Aula10
+
+-- ./ procurar no diretório em que está no momento e diretorios subsequentes
+-- Procura todos os arquivos que foram alterados no último dia
+-- Que foram executados no máximo um dia antes
+find ./  -ctime -1
+
+
+
+
+
+

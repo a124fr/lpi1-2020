@@ -1,0 +1,90 @@
+-- Aula-30-103-3-Gerencimanento Básico de Arquivos - tar, gzip, bzip2, xz
+
+-- Comando tar para grupa e junto com o algoritmo de compactação como e gzip, bzip2 e xz para compactar ou descompactar arquivos
+tar
+c -> criar uma arquivo
+x -> criar extrair de um arquivo compactado
+t -> lista os arquivos de um arquivo compactado
+f -> para informar o nome do arquivo, deve está sempre presente
+p -> preserva as permissões dos arquivos
+k -> Mantém o arquivo(o arquivo origem) quando for compactar 
+v -> verbose, ver os detalhes
+d -> decompress -> para descompactar
+
+-- Grupa os arquivos
+tar cpvf backup.tar novo*
+
+-- Mostra o que tem dentro o arquivo agrupado
+tar tf backup.tar
+
+-- Formas de compactar
+gzip
+bzip2
+xz
+
+-- Compacta usando o gzip
+gzip backup.tar
+
+gzip -k backup.tar
+
+-- para descompactar
+gunzip backup.tar.gz
+
+gzip -d backup.tar.gz
+
+-- Compactar usando o bzip2
+bzip2 -k backup.tar
+
+-- Descompactar usando o bzip2
+bzip2 -d backup.tar.bz2
+
+bunzip2 backup.tar.bz2
+
+-- Compactar usando o xz
+xz -k backup.tar
+
+
+-- Descompactar usando o xz
+unxz backup.tar.xz
+
+xz -d backup.tar.xz
+
+
+-- Forma de representação do compactadores
+z -> gzip
+j -> bzip2
+J - xz
+
+-- tar com gzip
+tar zcpvf backup2.tgz novo*
+
+-- Descompactando com tar e gzip
+tar zxvf backup2.tgz
+
+
+-- tar com bzip2
+tar jcpvf backup2.tbz novo*
+
+-- Descompactando com tar e bzip2
+tar jxvf backup2.tbz
+
+
+-- tar com xz
+tar Jcpvf backup2.txz novo*
+
+-- Descompactando com tar e xz
+tar Jxvf backup2.txz
+
+
+-- Forma de descompactar arquivos
+gzip - gzip -d / gunzip 
+bzip2 - bzip2 -d bunzip2
+xz - xz -d / unzip
+
+
+-- O comando file mostra como o arquivo foi comprimidos
+file nome_do_arquivo
+file backup2*
+
+
+

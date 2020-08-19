@@ -1,0 +1,53 @@
+-- Aula-28-103-3-Gerencimanento Básico de Arquivos - touch, cp, mv
+
+-- cp -opcoes origem destino
+cp alunos.txt /tmp
+
+-- -v -> opção de verbose
+cp -v alunos* /tmp/
+
+-- -i -> pergunta se o arquivo deve ser sobrescrito
+cp -i alunos* /tmp/
+
+-- -r para copia o diretorio e tudo dentro dele
+cp -r Diretorio1/ tmp/
+
+-- -p para preservas as característica do arquivo
+cp -p Aula08 /tmp
+
+--
+cp Aula1 Curso1
+
+--
+cp Aula1 /tmp/CursoLinux1
+
+-- Comando mv -> Move arquivos ou diretorios
+-- obs:
+O comando mv não tem as opções -R(-r) e o -p
+
+-- Também usado para renomear arquivos ou diretorios
+mv Aula1 Curso2
+
+
+-- Comando touch
+-- Criar o arquivo
+-- Mudar o data e hora da última alteração ou acesso do arquivo
+touch linux.txt
+
+-- Altera a data e hora do último acesso
+touch -a linux.txt
+
+-- Altera a data e hora da última modificação
+touch -m linux.txt
+
+-- Altera a data e hora da última alteração
+touch -t 201701011000 Aula30
+
+-- Mostra lista detalhada
+-- hora da última alteração
+ls -l
+
+
+
+
+

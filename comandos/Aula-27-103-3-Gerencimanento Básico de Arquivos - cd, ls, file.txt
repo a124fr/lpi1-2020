@@ -1,2 +1,53 @@
 -- Aula-27-103-3-Gerencimanento Básico de Arquivos - cd, ls, file
 
+-- Comando cd -> change directory
+cd caminho_do_diretorio
+cd /home/lpi1
+
+-- Comando ls mostra arquivos e diretorios
+ls 
+
+-- Mostra arquivos ocultos
+ls -a
+
+-- Mostra lista detalhada
+-- hora da última alteração
+ls -l
+
+-- h de humano
+ls -lh
+
+-- R de recursivo, mostra o que tem dentro de cada diretorio
+ls -lR
+
+-- nenhum, um ou mais caracteres
+ls -l Aula1*
+
+-- apenas um caractere 
+ls -l Aula1?
+
+-- uma lista de caracteres em sequencia
+ls -l Aula[123]
+
+-- Nega a lista
+ls -l Aula[!123]
+
+-- ma lista com o range
+ls -l Aula[1-5]
+
+--
+ls -l Aula[1-5]?
+
+-- sequencia de strings
+ls -l Aula{10,20,30}
+
+--
+ls -l A{ula,ULA}1
+
+-- 
+ls -ltr
+
+-- Analisa e informa que arquvio é
+file nome_do_arquivo
+
+

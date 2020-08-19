@@ -1,0 +1,70 @@
+-- Aula-32-103-3-Exercícios
+
+103.3 - Exercícios
+
+Os exercícios a seguir tem a finalidade principal de revisar e praticar o que estudamos durante as aulas, no entanto, você também pode  ser  desafiado a descobrir novas opções ou formas de uso dos  comandos, inclusive combinando comandos estudados em diferentes  sub-tópicos.
+
+Você encontrará em anexo um documento único com as respostas de todos os exercícios desta seção. 
+
+Note que as questões seguem uma sequência numérica até o final deste tópico.
+
+
+103.3 Gerenciamento Básico de Arquivos
+6. No home de seu usuário, crie um diretório chamado LPI1, dentro dele crie Aulas, Exercicios e Exemplos.
+mkdir LPI1
+mkdir LPI1/Aulas
+mkdir LPI1/Exercicios
+mkdir LPI1/Exemplos
+
+-- resposta prof.
+# cd ~
+# mkdir -p LPI1/Aulas
+# mkdir LPI1/Exercicios
+# mkdir LPI1/Exemplos
+
+
+7. Copie (não mova) todos os arquivos e diretórios existentes em /etc/network/ 
+para <HOME>/LPI1/Exercicios/Network/. Mantenha as  mesmas permissões.
+cp -pr /etc/network LPI1/Exercicios/Network/
+
+-- resposta prof.
+# mkdir LPI1/Exercicios/Network
+# cp -pr /etc/network/* ~/LPI1/Exercicios/Network/
+
+8. Copie (não mova) todos os arquivos do diretório /etc, cujo nome  termine com ".conf" para <HOME>/LPI1/Exercicios/Config/ 
+mkdir LPI1/Exercicios/Config
+cp /etc/*.conf LPI1/Exercicios/Config/ 
+
+-- resposta prof.
+# mkdir LPI1/Exercicios/Config
+# cp /etc/*.conf ~/LPI1/Exercicios/Config/
+
+9. Em <HOME>/LPI1/Exercicios, crie um arquivo chamado  arquivos-cron.tgz, compactado com o gzip, contendo todos os arquivos e  diretórios do /etc que contenham a palavra "cron" no nome. 
+tar zcvf LPI1/Exercicios/arquivos-cron.tgz /etc/*cron*
+
+-- resposta prof.
+# tar zcvpf arquivos-cron.tgz /etc/*cron*
+
+10. Descompacte conteúdo do arquivo arquivos-cron.tgz dentro do diretório 
+<HOME>/LPI1/Exercicios/Descompactar/
+
+cd LPI1/Exercicios/
+mkdir Descompactar
+mv arquivos-cron.tgz Descompactar/
+cd Descompactar
+tar zxvf arquivos-cron.tgz
+
+-- resposta prof.
+# mkdir ~/LPI1/Exercicios/Descompactar
+# cd ~/LPI1/Exercicios/Descompactar
+# tar zxvpf ../arquivos-cron.tgz
+
+11. Encontre todos os arquivos do diretório /var, cujo nome termine com ".gz" e que foram modificados nas últimas 48 horas.
+find /var -name "*.gz" -ctime -2
+
+-- resposta prof.
+# find /var -name “*gz” -mtime -2
+
+* mtime refere-se ao modification time. Para evitar as mensagens de erro referentes a
+permissões de leitura, é melhor executar como root.
+

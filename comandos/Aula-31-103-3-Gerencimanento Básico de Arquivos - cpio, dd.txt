@@ -1,0 +1,28 @@
+-- Aula-31-103-3-Gerencimanento Básico de Arquivos - cpio, dd
+
+
+-- -o para criar o grupamento do arquivo
+find ./ -name "novo*" | cpio -o > backup.cpio
+
+-- Desagrupar o arquivo
+-- opção -d para criar pasta caso precise
+cpio -d -i < backup.cpio
+
+-- compactar
+find ./ -name "novo*" | cpio -o |gzip > backup.cpio.gz
+
+
+-- Decompactar
+gunzip -c backup.cpio.gz | cpio -i
+
+
+-- Comando dd
+-- Serve para copia uma partição inteira
+-- Copia uma arquivo de imagem para um partição ou contrario
+dd
+
+dd if=origem of=destino
+dd if=/dev/sr0 of=imagem.img
+
+
+
