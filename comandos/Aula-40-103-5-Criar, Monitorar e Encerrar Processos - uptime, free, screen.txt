@@ -1,0 +1,33 @@
+-- Aula-103-5-Criar-Monitorar e Encerrar Processos - uptime, free, screen
+
+-- Mostra quanto tempo a máquina está ligado
+uptime
+
+-- Mostra a quantidade de memoria e swap usado pelo sistema
+free
+
+-- em mega
+free -m
+
+--
+free -g
+
+
+-- screen
+-- para instalar: apt-get install screen (root)
+-- Uma ferramenta para gerenciar varias abas internas no shell 
+-- ctrl + a, tecle alguma letra abaixo:
+screen
+
+ctrl + a, c -> criar um aba
+ctrl + a, d -> detached uma aba
+ctrl + a, n -> navega para proxima aba
+
+-- Mostra screen
+screen -ls
+
+-- Retorna uma screen detached
+screen -r
+
+--
+exit para sair das abas e fechar o screen.

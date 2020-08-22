@@ -1,0 +1,49 @@
+-- Aula-39-103-5 Criar, Monitorar e Encerrar Processos - kill, killall, pkill
+
+-- Os processos monitoram os sinais que são enviados pelos usuários ou pelo kernel
+O que são sinais?
+São mensagens.
+
+-- O comando kill
+-- O comando usado para mandar sinais para um processo
+-- normalmente é usado para terminar um processo
+kill
+
+-- Mostra os sinais para processos
+kill -l
+
+-- Principais sinais 
+-- usado para termina, reiniciar um processo, ou reler suas configurações 
+-- 1) SIGHUP
+
+-- Interrope um processo, ctrl+c
+-- Quando está executando alguma coisa você dá um ctrl+c
+-- 2) SIGINT 
+
+-- Fecha um processo, ou para o processo
+-- 3) SIGQUIT
+
+-- Mata o processo abruptamente
+-- É o único sinal que um processo não pode ser ignorado
+-- 9) SIGKILL
+
+-- Solicita que o processo finalize
+-- o padrão quando termina um processo
+-- 15) SIGTERM
+
+-- 
+kill -s SIGKILL 4500
+kill -SIGKILL 4500 
+
+--
+kill -s 9 4500
+kill -9 4500
+
+-- Mata os processo baseado no nome
+killall firefox
+
+-- 
+pkill firefox
+
+-- Faz um filtro e baseado no usuario e termina o processo
+pkill -1 firefox -u lp1

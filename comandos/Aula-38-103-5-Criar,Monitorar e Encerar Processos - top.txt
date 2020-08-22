@@ -1,0 +1,52 @@
+-- Aula-38-103.5-Criar, Monitorar e Encerrar Processos - top
+
+-- O comando top
+-- É um dos principais comandos para verifica o funcinamento do servido
+e monitorar como estão em execução os processos da máquina
+-- Monitorar questões de desempenho, performace e tomar as ações necessária
+top
+
+-- load average 
+-- É uma média de processos em execução ou aguardando execução
+-- É uma fila dos processos de cada cpu, e o tamanho dessa fila
+-- 1 cpu -> um valor ótimo baixo de 1
+-- a partir de 1 o valor deve ser analisado
+-- 4 cpu -> o valor normal é até 4.
+-- Isso é variável porque depende da máquina
+load average: média do último minuto, média dos últimos 5 minutos, média dos últimos 15 minutos
+
+-- Mostra os processo que consome mais memória
+o comando top em execução tecle M
+
+-- Mostra os processo que consome mais cpu
+o comando top em execução tecle P
+
+-- Mostra os processo de um usuário
+o comando top em execução tecle u, informe o nome do usuário
+para sair tecle <esc>
+
+-- Mudar a prioridade de execução do processo
+o comando top em execução tecle r
+para sair tecle <esc>
+
+-- Limitar o número de processo para mostrar em tela
+o comando top em execução tecle n, informe a quantidade.
+para sair tecle <esc>
+
+-- Para matar um processo
+o comando top em execuçao tecle k, informe o PID
+para sair tecle <esc>
+
+-- Para mostra as opções tecle ? ou h.
+o comando top em execução
+
+-- -b -> joga informação o top na tela
+top -b
+
+-- -d3 -> atualiza 3 em 3 segudos
+-- -n3 -> faz 3 execução.
+top -b -d3 -n3
+
+--
+top -b -d5 -n5 > process-linux.out
+
