@@ -1,0 +1,54 @@
+ -- Aula-36-103-4-Exercicios
+
+103.4 - Exercícios
+
+Os exercícios a seguir tem a finalidade principal de revisar e praticar o que estudamos durante as aulas, no entanto, você também pode  ser  desafiado a descobrir novas opções ou formas de uso dos  comandos, inclusive combinando comandos estudados em diferentes  sub-tópicos.
+
+Você encontrará em anexo um documento único com as respostas de todos os exercícios desta seção. 
+
+Note que as questões seguem uma sequência numérica até o final deste tópico.
+
+
+103.4 Fluxos, Pipes e Redirecionamentos
+
+12. Gere um comando que crie um arquivo chamado diretorios-config.out, contendo a saída do comando "ls" (usando as devidas opções) para todos os diretórios  do /var cujo nome contenha a palavra "config". A saída deve ser algo  como o visto abaixo:
+
+drwxr-xr-x 2 root    root    4096 Mar 28 11:49 /var/cache/fontconfig 
+
+drwx------ 2 root    root    4096 Abr  7 11:37 /var/cache/ldconfig 
+
+drwxr-xr-x 2 lightdm lightdm 4096 Mar 27 16:41 /var/lib/lightdm/.cache/fontconfig 
+
+drwx------ 4 lightdm lightdm 4096 Mar 27 16:41 /var/lib/lightdm/.config
+
+resposta:
+find /var -name "*config*" |xargs ls -l |tee diretorios-config.out
+
+reposta prof.:
+# find /var -name "*config*" -type d | xargs ls -ld > diretorios-config.out
+* a opção -type d define o tipo de arquivo “diretório”
+
+
+13. Explique as diferenças entre os seguintes redirecionadores de entradas e saídas
+
+    > arquivo     : direciona a saida para um arquivo
+
+    < arquivo     : direciona de arquivo para um comando
+
+    >> arquivo : direciona a saída para o final de um arquivo
+
+    2> arquivo : direciona a saida de erro para um arquivo
+
+    >arquivo 2>&1   : Redirecionamento do stdout e stderr para arquivo.
+
+    resposta prof.:
+   > arquivo : Redirecionamento da saída padrão. Cria ou sobrescreve arquivo.
+   < arquivo : Redirecionamento arquivo como entrada.
+   >> arquivo : Redirecionamento de saída padrão. Cria ou adiciona ao final do
+                arquivo.
+   2> arquivo : Redirecionamento de saída de erro. Cria ou sobrescreve arquivo.
+   >arquivo 2>&1 : Redirecionamento do stdout e stderr para arquivo.
+
+14. Escreva um único comando comando que gere a lista de arquivos e diretórios contidos em ~/LPI1/Exercicios/Network, exibindo-os na tela e  em um novo arquivo chamado lista-network.out
+
+ls -l ~/LPI1/Exercicios/Network |tee network.out

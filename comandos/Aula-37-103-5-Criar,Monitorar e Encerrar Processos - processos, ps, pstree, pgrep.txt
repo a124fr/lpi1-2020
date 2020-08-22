@@ -1,0 +1,65 @@
+-- Aula-37-103.5-Criar, Monitorar e Encerrar Processos - processos, ps, pstree, pgrep
+
+-- O que é um processo?
+Todo comando que executa no bash, todo aplicativo que é executado na interface gráfica e todo script shell que é executado são processos no linux.
+
+PID - Process ID
+
+PPID = Parent Process ID -> Processo Pai
+Hierarquia de Processos no Linux
+
+-- obs:
+O primeiro processo iniciado no Linux é o init seu ID 1
+
+-- Comando ps
+-- O comando que ver o status dos processos na máquina
+-- Ver todos os processo da máquina
+
+-- Mostra os processo em execução do usuário no terminal
+ps
+
+-- u -> Mostra o modo de exibição do usuário
+ps -u
+
+-- x ->  Mostra processo em que não está ligado ao terminal
+ps -ux
+
+-- a ->  Mostra processos de todos os usuários
+ps -axu
+
+-- f -> Mostra o parentesco do processo
+ps -axuf
+
+-- 
+ps lxa
+
+--
+ps wxa
+
+--
+ps -axu |head
+
+-- 
+ps axu |grep photo
+
+-- 
+ps axu |grep init
+
+-- Mostra informações de um processo específico
+ps u -C VBoxClient
+
+-- O comando pstree
+-- Mostra hierarquia de execução dos processos
+pstree
+
+-- Mostra o PID
+pstree -p
+
+-- Mostra o id de um processo de acordo com os parametros fornecidos
+pgrep bash
+
+--
+pgrep firefox-esr
+
+-- Mostra o processo de um usuário
+pgrep bash -u root

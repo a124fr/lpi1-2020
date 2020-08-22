@@ -1,0 +1,23 @@
+-- Aula-34-103-4-Fluxos, Pipes e Redirecionamentos - tee, xargs, subcomandos
+
+-- Escreve no arquivo e joga o resultado na tela por causa do comando tee
+ls -l /tmp |tee novo-arquivo-log
+
+--
+sort alunos2.txt | uniq | tee resultado.txt
+
+--O comando que pega a saída de um programa e enviar para outro, comando xargs 
+find /home -name "Aula3*" |xargs ls -l
+
+--
+find ~/Exempos -name "Aula[4-6]" |xargs ls -l
+
+-- 
+find /home -name "Aula[4-6]" |xargs rm -v
+
+-- Passa o resultado e um comando para outro comando
+echo "A versão do kernel é: " `uname -r`
+
+--
+echo "A versão do kernel é: " $(uname -r)
+

@@ -1,2 +1,45 @@
 -- Aula-33-103-4-Fluxos, Pipes e Redirecionamentos - Redir entrada/saida
 
+-- Todo programa no linux recebe 3 descritores
+STDIN(O) -> <
+-- A entrada padrão de qualquer programa é o teclado
+
+STDOUT(1) -> > ou 1> ; >> 1>>
+-- A saída padrão de qualquer programa é a tela.
+
+STDERR(2) -> 2>
+-- A saída padrão de erro de qualquer programa é a tela.
+
+
+-- Redirecionado a saída para o arquivo saida_ls.out
+ls -l > saida_ls.out
+
+
+-- > -> Se o arquivo não existir, e tão cria um caso o arquivo exista
+exista o arquivo e sobrescrito
+
+-- >> -> faz adiciona o conteúda para o final do arquivo
+
+-- Receber a saída do erro
+ls -l /tmp/arquivo-inexistente 2> saida_erro_ls
+
+-- Mostra o tanto o erro quanto o sucesso
+ls -l {Aula,AULA}3 > saida-ls.out 2> saida-ls-erro.out
+
+-- 
+ls -l {Aula,AULA}3 > saida-ls.out 2>&1
+
+-- Entrada sendo um arquivo
+tr 'a-z' 'A-Z' < arquivo.txt
+
+-- Comando mail caso tenha instalado
+comando -assunto -user -mensagem
+mail -s "Assunto" lpi1 < alunos.txt
+
+-- comando para instalar o mail
+-- sudo apt install mailutils
+
+-- Redirencimamento com o pipe
+-- também chamando de canalização
+cat alunos.txt |tr 'a-z' 'A-Z'
+
