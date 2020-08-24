@@ -1,4 +1,50 @@
 -- Aula-41-Criar, Monitorar e Encerrar Processos - jobs, bg, fg, nohup
 
+-- Quando um processo é iniciado no bash
+o processo fica preso ao terminal
+-- foreground -> processo preso no terminal
+
+-- O processo executando em background
+-- Não fica preso no terminal
+-- & -> Executa em background
+firefox &
+
+-- Comando jobs
+-- Mostra as tarefas rodando em background
+jobs
+
+-- lista as tarefas
+jobs -l
+
+-- Colocar o programa para rodar em background
+-- interroper o processo - parar
+ctrl+z
+
+-- Coloca o último processo em background
+bg
+
+-- 
+bg número_da_tarefa
+bg 1
+bg 2
+
+
+-- Coloca o último processo em foreground 
+fg
+
+-- 
+fg número_da_tarefa
+fg 1
+fg 2
+
+-- Parar o processo com o comando kill
+kill -9 firefox
+
+
+-- Não aceita o sinal sighup com o comando nohup
+nohup firefox
+
+-- o caminho do programa
+nohup /tmp/bin/programa.sh &
 
 

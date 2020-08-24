@@ -1,0 +1,73 @@
+103.5 - Exercícios
+
+Os exercícios a seguir tem a finalidade principal de revisar e praticar o que estudamos durante as aulas, no entanto, você também pode  ser  desafiado a descobrir novas opções ou formas de uso dos  comandos, inclusive combinando comandos estudados em diferentes  sub-tópicos.
+
+Você encontrará em anexo um documento único com as respostas de todos os exercícios desta seção. 
+
+Note que as questões seguem uma sequência numérica até o final deste tópico.
+
+
+103.5 Criar, Monitorar e Encerrar Processos
+
+15. Preencha as informações abaixo com os dados de sua instância Linux:
+
+    Total de Memória RAM utilizada (em MB):
+    free -m
+    1297MB	
+
+    Load Average (Média dos Últimos 5 minutos): 
+    uptime
+    load average:0,22, 0,30, 0,64
+    0,30
+
+    Quantidade de Processos em Execução: 
+    top
+    tasks:153
+
+    PID dos 3 processos que estão utilizando mais Memória:
+    1415
+    1504
+    20120
+
+
+    PPID (Parent Process ID) dos 3 processos com maior tempo de Uso de CPU: 
+    1059
+    2959
+    651
+16. Crie um comando, que gere um arquivo chamado ~/LPI1/Exercicios/resultado-top.out, que contenha a saída do comando  top, atualizado a cada 10 segundos, sendo executado indefinidamente até  que o processo seja morto. O comando deve rodar em background.
+top -b -d10 > ~francisco/LPI1/Exercicios/resultado-top.out &
+
+17. Envie um sinal de SIGKILL para o processo iniciado no exercício 16.
+kill -9 29443
+
+---------------------------------------------------------------------------
+-- Resolução prof.
+103.5 Criar, Monitorar e Encerrar Processos
+
+1.
+Total de Memoria(RAM) utilizada (MB):
+Observar a coluna "Used" do comando "free -m"
+
+Load Average(Média dos Últimos 5 minutos
+Executar top ou uptime. Dentre os 3 valores do "load average"
+observar o 2°
+
+Quantidade de Processos em Execução:
+Pelo comando top, observar o valor em "Tasks";ou
+ps axu |wc -l
+
+PID dos 3 processos que estão utilizando mais Memória:
+Pelo top, ordernar com a opção M. Obter os 3 primeiros PIDs
+
+PPID(Parent Process ID) dos 3 processos com maior tempo de Uso de CPU:
+Pelo top, ordernar com a opção T. Ainda no top, pressionar f para adicionar
+novos campos, e selecionar o campo PPID. Obter os 3 primeiros PPIDs.
+Ou obter os PIDs pelo top e buscar o PPID pelo comando "ps -la |grep PID"
+
+
+16.
+# top –b –d10 > ~/LPI1/Exercicios/resultado-top.out &
+
+17.
+# $ ps axu |grep "top -b d10"
+# kill -9 <PID>

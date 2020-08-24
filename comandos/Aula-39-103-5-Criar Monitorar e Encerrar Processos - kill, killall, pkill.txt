@@ -24,7 +24,7 @@ kill -l
 -- 3) SIGQUIT
 
 -- Mata o processo abruptamente
--- É o único sinal que um processo não pode ser ignorado
+-- É o único sinal que um processo não pode ignorar
 -- 9) SIGKILL
 
 -- Solicita que o processo finalize

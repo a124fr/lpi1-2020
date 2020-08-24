@@ -1,0 +1,72 @@
+-- Aula-42-103-5-Criar, Monitorar e Encerrar Processos - watch, tmux
+-- referencia sobre comandos tmux: https://linuxize.com/post/getting-started-with-tmux/
+
+-- O comando watch
+-- Executa um programa periodicamente mostrando os resultados
+-- Executa o date a cada 2 segundos, para cancelar tecle:
+-- ctrl+c
+watch date
+
+--
+watch "ps axu |grep firefox"
+
+-- mudar o tempo 
+watch -n1 "ps axu |grep firefox"
+
+watch -n60 "ps axu |grep firefox"
+
+-- O ferramenta tmux 
+sudo su apt-get install tmux 
+
+-- Controla vários terminais em uma única conexão
+-- semelhante ao screen, mas o tmux tem mais funções
+tmux
+
+--
+ctrl+b,c -> cria um nova janela
+ctrl+d,  -> renomeia a janela
+ctrl+b,p -> retorna a janela anterior
+ctrl+b,n -> vai para próxima janela
+ctrl+b,l -> vai para última janela em que estava
+ctrl+b,w -> lista as janelas e escolhe através das setas direcionais e tcle enter
+
+
+-- pode navegar entre as janelas
+ctrl+b,número_da_janela
+ctrl+b,1
+ctrl+b,2
+ctrl+b,3 
+
+-- e etc...
+
+-- Usar o tmux para criar paineis
+ctrl+b,% -> criar um painel
+ctrl+b, seta direcional esquerda ou direita -> no caso de painel vertical
+ctrl+b," -> criar um painel na horizontal
+ctrl+b, seta direcional para navegar entre os paineis
+ctrl+b,o -> rotaciona entre as janelas
+ctrl+b,d -> Para desatachar da conexão
+exit -> fecha o painel
+
+-- manter as teclas ctrl+b, setas direcionais(escolher uma) pressionada redimenciona o painel.
+
+-- mostra as conexões do tmux criadas 
+tmux list-sessions
+tmux ls
+
+-- Para conectar no terminal tmux
+tmux attach -t 0
+
+tmux attach -t con
+
+-- Abrir um nova conexão tmux
+tmux new -s connection
+
+-- 
+ctrl+b,& -> para matar a janela
+
+-- Matar a sessão do tmux no terminal
+tmux kill-session -t 0
+
+-- Abrir um nova conexão tmux 
+tmux new -s teste
