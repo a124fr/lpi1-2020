@@ -1,0 +1,44 @@
+-- Aula-44-103-6-Modificar a Prioridade de Execução de Processos - nice, renice
+
+-- Como modificar as prioridades dos processos dentro do linux
+-- Comandos paraver as prioridades top, ps -l
+-- PR -> Prioridade - É dado pelo linux o número de prioridade do momento.
+-- NI -> É a propriedade em que o usuário influencia a prioridade.
+-- NI -> É alterado por dois comandos nice, renice
+-- nice -> define a prioridade de um programa ou comando quando o processo é iniciado
+-- os valores podem ser definido em -20 até +19.
+-- valores negativos significa maior prioridade.
+-- valores positivos significa menos prioridade.
+-- obs: apenas o administrador pode aumentar a prioridade de um processo.
+-- os processos tem prioridade padrão zero.
+-- os usuários comum podem diminuir a prioridade de seus processos
+-- valor positivo
+nice -n 15 firefox &
+nice -15 firefox &
+
+-- valor negativo
+nice --15 firefox 
+
+-- no modo administrador 
+nice -n -15 gnome-calculator &
+nice --15 gnome-calculator &
+
+-- Outra forma para fazer
+nice --adjustment=10
+nice --adjustment=-10
+
+-- obs: Se usar o nice sem específica um valor, o valor padrão é 10.
+nice firefox &
+
+-- renice -> Altera o prioridade de um programa em execução.
+renice -n 8 20509
+renice 8 20509
+
+renice -7 20509
+renice 7 20509
+
+-- O -n deve estar logo após o renice. Exemplo:
+renice -n 5 -u lpi1
+renice -n 5 -g lpi1
+
+

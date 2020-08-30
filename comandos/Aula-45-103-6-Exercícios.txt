@@ -1,0 +1,25 @@
+103.6 - Exercícios
+Os exercícios a seguir tem a finalidade principal de revisar e praticar o que estudamos durante as aulas, no entanto, você também pode  ser  desafiado a descobrir novas opções ou formas de uso dos  comandos, inclusive combinando comandos estudados em diferentes  sub-tópicos.
+
+Você encontrará em anexo um documento único com as respostas de todos os exercícios desta seção. 
+
+Note que as questões seguem uma sequência numérica até o final deste tópico.
+
+
+
+103.6 Modificar a Prioridade de Execução de Processos
+sudo su 
+nice -n -10 top -b -d10 > ~francisco/LPI1/Exercicios/resultado-top.out &
+
+18. Inicie o mesmo comando aplicado no exercício 16, porém com a menor prioridade possível.
+
+nice -n -19 top -b -d10 > ~francisco/LPI1/Exercicios/resultado-top.out &
+
+19. Altere o NICE do processo "rsyslogd" para o valor -10.
+-- Resposta prof.
+pgrep rsyslogd
+
+renice -n 10 <PID>
+
+-- diretamente
+renice -n -10 `pgrep rsyslogd`
