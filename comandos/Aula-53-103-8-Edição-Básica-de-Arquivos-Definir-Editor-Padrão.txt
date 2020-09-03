@@ -1,0 +1,25 @@
+-- Aula-53-103-8-Edição Básica de Arquivos Definir Editor Padrão
+
+-- Escolher o editor padrão
+select-editor
+
+-- tecle o número do editor.
+
+--
+update-alternatives --config editor
+
+-- tecle o número do editor.
+
+-- tecle editor no terminal para abrir o editor padrão
+
+-- Duas variáveis de ambiente para definir o editor padrão
+-- $VISUAL OU $EDITOR
+
+export EDITOR=nano
+export EDITOR=vim
+export EDITOR=emacs
+
+
+-- Pode configurar o arquivo .bashrc para definir o editor padrão
+-- digite no final do arquivo
+export EDITOR=vim

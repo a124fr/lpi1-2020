@@ -1,0 +1,80 @@
+-- Aula-47-103-7-Pesquisar Arquivos de Texto com Expressões Regulares - regex, sed
+
+-- lista []
+egrep "b[aei]g" texto.txt
+
+-- Encontrar todoas as letras entre "a" e "u", não apenas as vogais
+egrep "b[a-u]g" texto.txt
+
+-- ^ -> Começo da linha
+-- Encontra as linhas que tem a palavra Linux no inicio da linha
+egrep "^Linux" texto.txt
+
+-- $ -> Para o final da linha
+egrep "Linux$" texto.txt
+
+-- Encontra os comentarios
+egrep "^#" texto.txt
+
+-- Encontra tudo menos os comentários
+egrep -v "^#" texto.txt
+
+-- Busca todas as linha que não tenha nada entre o começo e final
+-- linhas em brancos
+egrep "^$" texto.txt
+
+-- Não linha em brancos
+egrep -v "^$" texto.txt
+
+-- Os metacaracteres (*, ?, +) que determina as repetição de caracteres na busca
+-- * -> Determina que o caractere anterior ocorra nenhuma ou várias vez
+-- incluencia o caractere ou grupo de caracteres anteriores 
+-- nenhuma ou várias ocorrências
+egrep "b[a-u]g*" texto.txt
+
+-- + -> Determina que o caractere anterior ocorra pelo menos uma vez
+-- Uma ou várias ocorrência
+egrep "b[a-u]g+" texto.txt
+
+
+-- ? -> Determina que o caractere anterior ocorra nenhuma ou pelo menos uma vez
+-- nenhuma ou 1 ocrrência apenas
+egrep "b[a-u]?" texto.txt
+
+
+egrep "b[a-u]?e" texto.txt
+
+
+-- . -> Representa um único caractere
+-- qualquer caractere
+
+egrep "b[a-i]g." texto.txt
+
+egrep "b[a-i]..." texto.txt
+
+egrep "O.Linux" texto.txt
+
+egrep "O.*Linux" texto.txt
+
+egrep --color "O*Linux" texto.txt
+
+
+-- O comando sed -> substituir um valor por outro dentro de um arquivo de texto ou
+Deletar uma linha segue algum padrão
+
+-- Deletar a linha onde encontrar a palavra Linux
+sed '/Linux/d' texto.txt
+
+-- Apaga a linha que tem no começo o caractere # 
+sed 's/^#/d' texto.txt
+
+-- 
+sed 's/[Ll]inux/Windows/' texto.txt
+
+-- -i -> ignora diferenças entre maiúsculas e minúsculas
+egrep -i "Linux" texto.txt
+
+-- \qualquer caractere -> \. -> Não intepreta como metacarectere
+-- Intrepreta como parte do texto um simples ponto
+egrep -i "\.linux\." texto.txt
+

@@ -1,0 +1,16 @@
+-- Aula-52-103-8-Edição-Básica-de-Arquivos-nano-e-emacs
+
+-- link para comandos básicos
+https://www.ime.usp.br/~rbrito/texts/emacs.html
+
+-- ^ -> representa o ctrl
+-- M -> representa o alt
+-- ^G -> ctrl + g
+
+alt + \ -> começo do texto
+alt + / -> final do texto
+
+HOME -> inicio da linha
+END -> final da linha
+
+ctrl + shift + _ -> informa a linha e coluna onde ir.(navegar)

@@ -1,0 +1,18 @@
+-- Aula-50-103-8-Edição Básica de Arquivos - vi/vim
+
+-- Comando ZZ -> Sai e Salvar do arquivo
+
+-- Comando :x -> Sai e Salvar
+
+-- Comando :w -> Salva e permanece no arquivo
+
+-- Comando q -> sai do arquivo
+q! -> Sai sem salvar
+
+-- Executa o comando depois volta para  o arquivo
+:!ls /tmp
+
+-- Comando e
+carrega informação caso outro processo altere o arquivo em modo de edição
+:e
+:e! -> No caso tenha feito alteração no arquivo.

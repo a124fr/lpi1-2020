@@ -1,0 +1,17 @@
+-- Aula-48-103-7-Pesquisar Arquivos de Texto com Expressão Regular
+
+-- grep -> Trouxe o uso das expressões regulares do Unix.
+-- egrep -> Trouxe as melhorias do uso das expressões regulares no linux 
+
+-- {} -> Define quantas vezes o caractere anterior ou grupo de carecteres podem acontecer
+grep 'ba{1,3}' novo-texto.txt
+
+-- Para o grep é necessário o \
+grep 'ba\{1,3\}' novo-texto.txt
+
+-- 
+egrep 'b{1,3}' novo-texto.txt
+
+
+-- Tipo de manual 7 do regex -> Trás informações sobre regex 
+man 7 regex

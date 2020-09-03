@@ -1,0 +1,35 @@
+103.7 - Exercícios
+Os exercícios a seguir tem a finalidade principal de revisar e praticar o que estudamos durante as aulas, no entanto, você também pode  ser  desafiado a descobrir novas opções ou formas de uso dos  comandos, inclusive combinando comandos estudados em diferentes  sub-tópicos.
+
+Você encontrará em anexo um documento único com as respostas de todos os exercícios desta seção. 
+
+Note que as questões seguem uma sequência numérica até o final deste tópico.
+
+103.7 Pesquisar arquivos de texto com Expressões Regulares
+
+20. Gere um comando que exiba na tela todas as linhas do arquivo /etc/passwd que terminem com "nologin" 
+egrep '*nologin' /etc/passwd
+
+-- prof.
+grep "nologin$" /etc/passwd
+
+
+21. Crie um comando que liste todos os arquivos do diretório /etc/ que contenham a palavra "eth0" em seu conteúdo,  não no nome do arquivo.  A pesquisa deve incluir também os subdiretórios. Apenas o nome e  caminho do arquivo deve ser exibido.
+egrep -cr "*eth0*" /etc/
+
+-- prof.
+grep -lr "eth0" /etc/*
+
+
+22. No arquivo /etc/passwd, o primeiro campo indica o nome do usuário, enquanto que o  terceiro indica o ID do usuário. Crie um  comando que exiba apenas os nomes de usuários que tenham o ID com 3  dígitos.
+cat /etc/passwd |cut -d":" -f1,3 |egrep '*:.{3}$' |cut -d":" -f1
+
+--prof. 
+egrep "[a-zA-Z]:[0-9][0-9][0-9]:" /etc/passwd |cut -d":" -f1
+
+
+23. Com base no arquivo alunos.txt, crie um novo arquivo chamado alunos-exercicio.txt contendo o mesmo conteúdo do arquivo alunos.txt mas fazendo com que toda ocorrência a "Ana Maria" seja substituído por "Marieta".
+cat alunos.txt | sed 's/Ana Maria/Marieta/' > alunos-exercicos.txt
+
+--prof.
+sed -e 's/Ana Claudia/Marieta/g' alunos.txt > alunos-exercicio.txt

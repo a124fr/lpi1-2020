@@ -1,0 +1,52 @@
+-- Aula-48-103-7-Pesquisar Arquivos de Texto com Expressão Regular
+
+-- grep -> Trouxe o uso das expressões regulares do Unix.
+-- egrep -> Trouxe as melhorias do uso das expressões regulares no linux 
+
+-- {} -> Define quantas vezes o caractere anterior ou grupo de carecteres podem acontecer
+grep 'ba{1,3}' novo-texto.txt
+
+-- Para o grep é necessário o \
+grep 'ba\{1,3\}' novo-texto.txt
+
+-- 
+egrep 'b{1,3}' novo-texto.txt
+
+
+-- Tipo de manual 7 do regex -> Trás informações sobre regex 
+man 7 regex
+
+-- Character Classes ou Character Set
+-- O ponto
+.
+
+-- A lista
+[]
+
+-- A lista negada
+[^]
+
+-- Quantifiers
+? * + {}
+
+-- Anchors
+^ $ \b
+
+obs: \b o começão ou fim de uma palavra
+
+egrep '\bLinux\b' texto.txt
+
+obs: o \b vai considerar letras, números e o sublinhado.
+
+
+-- | -> Encontrar um ou outra o nunca as duas.
+egrep 'bag|beg' texto.txt
+
+-- Usando grupos
+egrep '(bag|beg)inner' texto.txt
+
+-- Tornar o grupo opcional
+egrep '(bag|beg)?inner' texto.txt
+
+
+

@@ -1,0 +1,47 @@
+-- Aula-46-103-7-Pesquisar Arquivos de Texto com Expressões Regulares - grep, intro regex
+
+-- REGEX = Regular Expression
+-- Um conjunto de metacaracteres que define um padrão de texto
+-- Ex: . $ ^ 
+
+-- File globbing é uma forma de o shell identificar grupos de arquivos
+pelo nome, não exatamente expressões regulares.
+
+-- Em Expressão regular é para conteúdo de texto, padrões.
+
+-- Comando grep
+-- Define o texto em que procurar no arquivo de texto.
+-- É case sensitive
+grep Linux texto.txt
+
+-- -c -> Encontra o número de ocorrência dentro do texto
+grep -C Linux texto.txt
+
+-- usando file globbing
+grep -c Linux *
+
+-- -i -> Procura por caracteres maiusculo ou minúsculo. 
+-- obs: o comando fica mais pesado em busca maiores.
+grep -i Linux texto.txt
+
+-- -r -> Procurar o caractere dentro dos subdiretórios do diretório atual.
+grep -r Linux t*
+
+-- Expande as expressões regulares.
+-- obs: As repressões regulares não são 100% padrão em todos os comandos
+-- A variáções nos padrões da expressões regulares de comando para comando, 
+-- de linguagem para linguagem
+-- grep -E 
+-- 
+-- egrep = grep -E
+-- fgrep não aplica expressões regulares
+-- Consigera tudo escrito como texto.
+
+--Mostra tudo que não contém o item da pesquisa que no caso é "Linux"
+-- Mostra tudo que não contém os carecteres a pesquisar.
+grep -v Linux texto.txt
+
+--
+grep -vi Linux texto.txt
+
+-- grep - egrep (grep -E) - fgrep
